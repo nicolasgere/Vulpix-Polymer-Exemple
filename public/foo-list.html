@@ -1,0 +1,25 @@
+<!-- import latest release version of all components from polygit -->
+<link rel="import" href="https://polygit.org/components/polymer/polymer.html">
+<link rel="import" href="https://polygit.org/components/iron-ajax/iron-ajax.html">
+
+
+
+<dom-module id="foo-list">
+  <template>
+    <h1>Hello World</h1>
+    <h3>List from ajax call</h3>
+     <iron-ajax
+            auto
+            url="/Data"
+            last-response="{{data}}"
+            handleAs="json">
+    </iron-ajax>
+    {{data}}
+  </template>
+  
+  <script>
+    Polymer({
+      is: "foo-list",
+    });
+  </script>
+</dom-module>
